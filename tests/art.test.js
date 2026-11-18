@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {BLADE_PROFILE,CUIRASS_PROFILE,bladeData,seeded} from '../art.js';
+test('blade tapers to point',()=>{assert.equal(BLADE_PROFILE.at(-1)[1],0);assert.equal(BLADE_PROFILE.at(-1)[2],0);for(let i=1;i<BLADE_PROFILE.length;i++)assert.ok(BLADE_PROFILE[i][0]>BLADE_PROFILE[i-1][0])});
+test('blade data has finite vertices and valid indices',()=>{const d=bladeData();assert.ok(d.vertices.every(Number.isFinite));assert.equal(d.indices.length%3,0);assert.ok(d.indices.every(i=>Number.isInteger(i)&&i>=0&&i<d.vertices.length/3));assert.equal(d.uv.length,d.vertices.length/3*2)});
+test('armor profile ordered and positive',()=>{for(let i=0;i<CUIRASS_PROFILE.length;i++){const [y,x,z]=CUIRASS_PROFILE[i];assert.ok(Number.isFinite(y)&&x>0&&z>0);if(i)assert.ok(y>CUIRASS_PROFILE[i-1][0])}});
+test('seeded texture variations reproducible',()=>{const a=seeded(25),b=seeded(25);for(let i=0;i<100;i++){const x=a();assert.equal(x,b());assert.ok(x>=0&&x<1)}});
