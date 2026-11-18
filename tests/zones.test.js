@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {zoneAt,ZONES,PARRY_NUMBERS,ParryControl} from '../zones.js';import {Duel} from '../combat.js';
+const advance=(d,t)=>{for(let i=0;i<Math.ceil(t/.01);i++)d.tick(.01)};
+test('five zones and consistent screen boundaries',()=>{for(const [x,y,z] of [[.1,.1,'head'],[.9,.32,'head'],[.1,.33,'upperLeft'],[.5,.5,'upperRight'],[.1,.66,'lowerLeft'],[1,1,'lowerRight'],[-1,.5,null],[.5,1.1,null]])assert.equal(zoneAt(x,y),z)});
+test('reference parry numbers',()=>assert.deepEqual(PARRY_NUMBERS,{head:5,upperLeft:4,upperRight:3,lowerLeft:1,lowerRight:2}));
+test('all five zones attack',()=>{for(const z of ZONES){const d=new Duel({zoneMode:true});assert.ok(d.act(z,{direct:true}));advance(d,.22);assert.ok(d.enemyHP<100);assert.equal(d.act(z),false)}});
+test('matching parry in each zone and riposte',()=>{for(const z of ZONES){const d=new Duel({zoneMode:true});d.enemy={phase:'windup',dir:z,until:.12};d.setDefense(true);assert.equal(d.guard,null);d.setGuard(z);advance(d,.13);assert.equal(d.hp,100);assert.equal(d.perfects,1);d.setDefense(false);d.act('head',{direct:true});advance(d,.22);assert.equal(d.enemyHP,68)}});
+test('stance alone does not block',()=>{const d=new Duel({zoneMode:true});d.enemy={phase:'windup',dir:'head',until:.1};d.setDefense(true);advance(d,.12);assert.equal(d.hp,80)});
+test('wrong zone fails',()=>{const d=new Duel({zoneMode:true});d.enemy={phase:'windup',dir:'lowerLeft',until:.1};d.setDefense(true);d.setGuard('upperLeft');advance(d,.12);assert.equal(d.hp,80)});
+test('repeat parry tap refreshes perfect window',()=>{const d=new Duel({zoneMode:true});d.enemy={phase:'windup',dir:'head',until:.5};d.setDefense(true);d.setGuard('head');advance(d,.4);d.setGuard('head');advance(d,.12);assert.equal(d.perfects,1)});
+test('defensive taps do not attack',()=>{const d=new Duel({zoneMode:true});d.setDefense(true);d.act('head');advance(d,.5);assert.equal(d.action,null);assert.equal(d.enemyHP,100)});
+test('hold mode and pointer isolation',()=>{const p=new ParryControl();assert.equal(p.down(1),true);assert.equal(p.up(2),true);assert.equal(p.up(1),false)});
+test('toggle persists until second tap or cancellation',()=>{const p=new ParryControl('toggle');assert.equal(p.down(1),true);assert.equal(p.up(1),true);assert.equal(p.down(2),false);p.up(2);p.down(3);assert.equal(p.up(3,true),false);p.down(4);assert.equal(p.reset(),false)});
+test('AI chooses only legal zones',()=>{for(let s=0;s<20;s++){const d=new Duel({zoneMode:true,seed:s});advance(d,1.4);assert.ok(ZONES.includes(d.enemy.dir))}});
