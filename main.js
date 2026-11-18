@@ -10,6 +10,12 @@ function back(){resetInput();duel=null;$('hud').hidden=$('end').hidden=true;$('s
 buttons.forEach(b=>b.addEventListener('click',()=>start(b.dataset.mode)));$('again').onclick=()=>start(lastMode);$('back').onclick=back;$('exit').onclick=back;
 function defend(on){duel?.setDefense(on);$('defense').classList.toggle('active',on)}
 const pad=$('gesture'), defense=$('defense');
+// Safari fallback: gameplay surfaces use Pointer Events, never synthesized clicks.
+// Leave menus and the Exit button alone so their click handlers remain usable.
+for(const surface of [pad,defense,$('view')]){
+  surface.addEventListener('touchend',e=>{if(duel&&!duel.result&&e.cancelable)e.preventDefault()},{passive:false});
+}
+
 defense.addEventListener('pointerdown',e=>{if(!duel||duel.result||left!==null)return;e.preventDefault();left=e.pointerId;defense.setPointerCapture(e.pointerId);defend(true)});
 function endDef(e){if(e.pointerId===left){left=null;defend(false)}}['pointerup','pointercancel','lostpointercapture'].forEach(n=>defense.addEventListener(n,endDef));
 pad.addEventListener('pointerdown',e=>{if(!duel||duel.result||right)return;e.preventDefault();pad.setPointerCapture(e.pointerId);right={id:e.pointerId,x:e.clientX,y:e.clientY,at:performance.now(),done:false}});
