@@ -12,3 +12,6 @@ html,body,#app,#story,#end,.story-inner button,#exit{touch-action:manipulation}
 
 /* v0.1.4: brief nonblocking strike feedback. */
 #impact{position:absolute;z-index:1;pointer-events:none;transform:translate(-50%,-50%);opacity:0;font:42px system-ui;color:#ffe2a2;line-height:1;text-shadow:0 0 16px #ffc35e}#impact.visible{opacity:var(--impact-opacity,0)}#impact[data-kind="parry"]{color:#e0f7ff;text-shadow:0 0 20px #91d9ff}#impact[data-kind="enemyHit"]{color:#ffb398;font:700 64px system-ui}#impact[data-kind="playerHit"]{display:none}#cue{top:14%;font-size:14px}#zones [data-zone="head"] span{transform:translateY(42px)}
+
+/* Opponent selection fits the portrait story panel without changing combat controls. */
+#opponentDescription{margin:6px 0 10px;min-height:2.8em;color:#d7c5a3}.mode-label{gap:8px}.mode-label select{max-width:66%}.enemy span{font-size:clamp(10px,2.8vw,13px)}
