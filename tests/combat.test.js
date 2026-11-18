@@ -1,0 +1,13 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {Duel,direction,gesture,DIRECTIONS} from '../combat.js';
+const advance=(d,t)=>{for(let i=0;i<Math.ceil(t/.01);i++)d.tick(.01)};
+const enemy=(d,dir,time=.1)=>{d.enemy={phase:'windup',dir,until:d.time+time}};
+test('four directions, threshold, hold',()=>{assert.equal(direction(0,-40),'up');assert.equal(direction(0,40),'down');assert.equal(direction(-40,2),'left');assert.equal(direction(40,2),'right');assert.equal(direction(12,12),null);assert.equal(gesture(0,0,330),'center');assert.equal(gesture(40,0,500),'right')});
+test('each matching direction parries and opens riposte',()=>{for(const dir of DIRECTIONS){let d=new Duel();enemy(d,dir);d.setDefense(true);d.act(dir);advance(d,.12);assert.equal(d.hp,100);assert.equal(d.parries,1);assert.equal(d.perfects,1);d.setDefense(false);d.act('down');advance(d,.30);assert.equal(d.enemyHP,68)}});
+test('wrong guard fails',()=>{let d=new Duel();enemy(d,'left');d.setDefense(true);d.act('right');advance(d,.12);assert.equal(d.hp,80);assert.equal(d.parries,0)});
+test('early correct guard is normal parry',()=>{let d=new Duel();enemy(d,'up',.5);d.setDefense(true);d.act('up');advance(d,.55);assert.equal(d.parries,1);assert.equal(d.perfects,0)});
+test('lunge consumes stamina and resolves after windup',()=>{let d=new Duel();assert.ok(d.act('center'));assert.equal(d.stamina,78);assert.equal(d.enemyHP,100);advance(d,.35);assert.equal(d.enemyHP,78);assert.equal(d.act('right'),false)});
+test('stamina recovers and insufficient stamina blocks attacks',()=>{let d=new Duel();d.stamina=4;assert.equal(d.act('up'),false);advance(d,.5);assert.ok(d.stamina>4)});
+test('training damage lower',()=>{const d=new Duel({training:true});enemy(d,'up');advance(d,.12);assert.equal(d.hp,91)});
+test('guard break on matching clash',()=>{let d=new Duel();d.enemyGuard=15;enemy(d,'up',1);d.act('up');advance(d,.3);assert.equal(d.enemy.phase,'recovery');assert.ok(d.openUntil>d.time)});
+test('combat ends on lethal attack and cannot continue',()=>{let d=new Duel();d.enemyHP=18;d.act('down');advance(d,.3);assert.equal(d.result,'win');assert.equal(d.act('up'),false)});
+test('seed reproducible',()=>{let a=new Duel({seed:7}),b=new Duel({seed:7});advance(a,5);advance(b,5);assert.deepEqual(a.drain(),b.drain());assert.equal(a.hp,b.hp)});

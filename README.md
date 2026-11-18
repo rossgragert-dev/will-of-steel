@@ -13,6 +13,10 @@ A first-person, portrait-mode mobile sword-dueling RPG starring William.
 
 ## Status
 
-The v0.1 source prototype exists as a separate project archive and has not yet been transferred to this repository. Ten combat-logic tests passed in the original development environment. Browser rendering, physical blade collisions, and physical iPhone testing remain outstanding.
+The v0.1 combat prototype is imported in this repository. All ten combat-logic tests pass locally. Browser rendering, physical blade collisions, and physical iPhone testing remain outstanding.
+
+Run `npm test` for the combat tests and `npm run serve` to start a local HTTP server (Python 3 required). Open http://localhost:8080 in a WebGL2-capable browser. Three.js loads from a CDN and requires internet access.
 
 GitHub Pages deployment is not yet verified.
+
+See [the original prototype README](docs/v0.1-README.md) for full setup and limitations, and [DESIGN.md](DESIGN.md) for the development plan.
