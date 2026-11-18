@@ -3,3 +3,6 @@
 /* v0.1.1 — stop Safari double-tap zoom, keep story scrolling. */
 html,body,#app,#story,#end,.story-inner button,#exit{touch-action:manipulation}
 #view,#hud,#controls,#defense,#gesture{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+
+/* v0.1.2: full-screen blade aim; keep only the left-thumb stance button. */
+#gesture{display:none!important}#controls{justify-content:flex-start}#defense{width:90px;height:90px}#defense small{bottom:19px}#cue,#message{pointer-events:none}#view{touch-action:none;-webkit-touch-callout:none}
