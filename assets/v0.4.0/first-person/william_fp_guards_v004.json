@@ -1,0 +1,186 @@
+{
+  "source": "william_fp_arms_v004",
+  "camera_space": "three.js camera space relative to fp_eye; metres",
+  "viewmodel_camera": {
+    "back_m": 0.2,
+    "up_m": 0.02,
+    "pitch_down_deg": 12.0,
+    "fov_y_deg": 61.0
+  },
+  "guards": {
+    "ready": {
+      "blade_euler_rig_poses": [
+        -0.62,
+        0,
+        -0.02
+      ],
+      "hilt_cam_m": [
+        0.2,
+        -0.34,
+        -0.4
+      ],
+      "clavicle_lift_deg": 0,
+      "elbow_pole": "down",
+      "elbow_pole_offset": [
+        0.45,
+        0.35,
+        -0.35
+      ],
+      "metrics": {
+        "cost": 0.0065,
+        "enemy_occluded": 0.0,
+        "arm_screen_cover": 0.026,
+        "wrist_r_mm": 0.0,
+        "wrist_l_mm": 0.0,
+        "blade_visible": 0.9,
+        "hilt_in_frame": true,
+        "left_hand_on_grip_mm": 0.0
+      }
+    },
+    "head_5": {
+      "blade_euler_rig_poses": [
+        -0.22,
+        0,
+        1.5
+      ],
+      "hilt_cam_m": [
+        0.09,
+        -0.1,
+        -0.34
+      ],
+      "clavicle_lift_deg": 12,
+      "elbow_pole": "down",
+      "elbow_pole_offset": [
+        0.45,
+        0.35,
+        -0.35
+      ],
+      "metrics": {
+        "cost": 0.5235,
+        "enemy_occluded": 0.269,
+        "arm_screen_cover": 0.338,
+        "wrist_r_mm": 0.0,
+        "wrist_l_mm": 1.1,
+        "blade_visible": 0.24,
+        "hilt_in_frame": true,
+        "left_hand_on_grip_mm": 1.2
+      }
+    },
+    "upperLeft_4": {
+      "blade_euler_rig_poses": [
+        -0.34,
+        0,
+        0.12
+      ],
+      "hilt_cam_m": [
+        -0.14,
+        -0.22,
+        -0.36
+      ],
+      "clavicle_lift_deg": 12,
+      "elbow_pole": "down",
+      "elbow_pole_offset": [
+        0.45,
+        0.35,
+        -0.35
+      ],
+      "metrics": {
+        "cost": 0.1485,
+        "enemy_occluded": 0.099,
+        "arm_screen_cover": 0.199,
+        "wrist_r_mm": 0.0,
+        "wrist_l_mm": 0.0,
+        "blade_visible": 0.52,
+        "hilt_in_frame": true,
+        "left_hand_on_grip_mm": 0.0
+      }
+    },
+    "upperRight_3": {
+      "blade_euler_rig_poses": [
+        -0.34,
+        0,
+        -0.12
+      ],
+      "hilt_cam_m": [
+        0.1,
+        -0.22,
+        -0.36
+      ],
+      "clavicle_lift_deg": 0,
+      "elbow_pole": "down",
+      "elbow_pole_offset": [
+        0.45,
+        0.35,
+        -0.35
+      ],
+      "metrics": {
+        "cost": 0.0335,
+        "enemy_occluded": 0.006,
+        "arm_screen_cover": 0.11,
+        "wrist_r_mm": 0.0,
+        "wrist_l_mm": 0.0,
+        "blade_visible": 0.52,
+        "hilt_in_frame": true,
+        "left_hand_on_grip_mm": 0.0
+      }
+    },
+    "lowerLeft_1": {
+      "blade_euler_rig_poses": [
+        -0.36,
+        0,
+        2.8
+      ],
+      "hilt_cam_m": [
+        -0.15,
+        -0.36,
+        -0.34
+      ],
+      "clavicle_lift_deg": 0,
+      "elbow_pole": "down",
+      "elbow_pole_offset": [
+        0.45,
+        0.35,
+        -0.35
+      ],
+      "metrics": {
+        "cost": 0.3136,
+        "enemy_occluded": 0.0,
+        "arm_screen_cover": 0.119,
+        "wrist_r_mm": 0.0,
+        "wrist_l_mm": 0.0,
+        "blade_visible": 0.1,
+        "hilt_in_frame": true,
+        "left_hand_on_grip_mm": 0.0
+      }
+    },
+    "lowerRight_2": {
+      "blade_euler_rig_poses": [
+        -0.36,
+        0,
+        -2.8
+      ],
+      "hilt_cam_m": [
+        0.18,
+        -0.4,
+        -0.34
+      ],
+      "clavicle_lift_deg": 12,
+      "elbow_pole": "down",
+      "elbow_pole_offset": [
+        0.45,
+        0.35,
+        -0.35
+      ],
+      "metrics": {
+        "cost": 0.449,
+        "enemy_occluded": 0.081,
+        "arm_screen_cover": 0.185,
+        "wrist_r_mm": 0.0,
+        "wrist_l_mm": 0.0,
+        "blade_visible": 0.05,
+        "hilt_in_frame": true,
+        "left_hand_on_grip_mm": 0.0
+      }
+    }
+  }
+}

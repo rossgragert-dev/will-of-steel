@@ -1,0 +1,99 @@
+{
+  "asset": "william_fp_arms_v004",
+  "blender": "5.3.0",
+  "engine": "CYCLES",
+  "triangles": 9636,
+  "materials": [
+    "william_gambeson",
+    "william_steel",
+    "william_leather"
+  ],
+  "bones": 51,
+  "deform_bones": 43,
+  "fov_y_deg": 61.0,
+  "viewmodel_camera": {
+    "back_m": 0.2,
+    "up_m": 0.02,
+    "pitch_down_deg": 12.0
+  },
+  "checks": {
+    "enemy_screen_cover": 0.145,
+    "pole_forearm_r": -90,
+    "pole_forearm_l": -90,
+    "ready": {
+      "cost": 0.0065,
+      "enemy_occluded": 0.0,
+      "arm_screen_cover": 0.026,
+      "wrist_r_mm": 0.0,
+      "wrist_l_mm": 0.0,
+      "blade_visible": 0.9,
+      "hilt_in_frame": true,
+      "left_hand_on_grip_mm": 0.0
+    },
+    "head_5": {
+      "cost": 0.5235,
+      "enemy_occluded": 0.269,
+      "arm_screen_cover": 0.338,
+      "wrist_r_mm": 0.0,
+      "wrist_l_mm": 1.1,
+      "blade_visible": 0.24,
+      "hilt_in_frame": true,
+      "left_hand_on_grip_mm": 1.2
+    },
+    "upperLeft_4": {
+      "cost": 0.1485,
+      "enemy_occluded": 0.099,
+      "arm_screen_cover": 0.199,
+      "wrist_r_mm": 0.0,
+      "wrist_l_mm": 0.0,
+      "blade_visible": 0.52,
+      "hilt_in_frame": true,
+      "left_hand_on_grip_mm": 0.0
+    },
+    "upperRight_3": {
+      "cost": 0.0335,
+      "enemy_occluded": 0.006,
+      "arm_screen_cover": 0.11,
+      "wrist_r_mm": 0.0,
+      "wrist_l_mm": 0.0,
+      "blade_visible": 0.52,
+      "hilt_in_frame": true,
+      "left_hand_on_grip_mm": 0.0
+    },
+    "lowerLeft_1": {
+      "cost": 0.3136,
+      "enemy_occluded": 0.0,
+      "arm_screen_cover": 0.119,
+      "wrist_r_mm": 0.0,
+      "wrist_l_mm": 0.0,
+      "blade_visible": 0.1,
+      "hilt_in_frame": true,
+      "left_hand_on_grip_mm": 0.0
+    },
+    "lowerRight_2": {
+      "cost": 0.449,
+      "enemy_occluded": 0.081,
+      "arm_screen_cover": 0.185,
+      "wrist_r_mm": 0.0,
+      "wrist_l_mm": 0.0,
+      "blade_visible": 0.05,
+      "hilt_in_frame": true,
+      "left_hand_on_grip_mm": 0.0
+    }
+  },
+  "enemy_preview": "assets/v0.4.0/characters/ser_aldren_v006.glb",
+  "normals_fixed": "0/4722",
+  "glb": "assets\\v0.4.0\\first-person\\william_fp_arms_v004.glb",
+  "glb_sha256": "6b525af71bfcd99cf84cda260a033a5bd9cde9081a2e4e0a0891913f5435de91",
+  "glb_bytes": 4981668,
+  "blend": "source\\blender\\first-person\\william_fp_arms_v004.blend",
+  "renders": [
+    "previews\\v0.4.0\\william_fp_arms_v004_pov_ready.png",
+    "previews\\v0.4.0\\william_fp_arms_v004_pov_head_5.png",
+    "previews\\v0.4.0\\william_fp_arms_v004_pov_upperLeft_4.png",
+    "previews\\v0.4.0\\william_fp_arms_v004_pov_upperRight_3.png",
+    "previews\\v0.4.0\\william_fp_arms_v004_pov_lowerLeft_1.png",
+    "previews\\v0.4.0\\william_fp_arms_v004_pov_lowerRight_2.png",
+    "previews\\v0.4.0\\william_fp_arms_v004_inspect_last_pose.png"
+  ]
+}

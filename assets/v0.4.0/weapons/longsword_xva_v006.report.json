@@ -1,0 +1,22 @@
+{
+  "asset": "longsword_xva_v006",
+  "engine": "CYCLES",
+  "triangles": 2610,
+  "glb": "assets\\v0.4.0\\weapons\\longsword_xva_v006.glb",
+  "glb_sha256": "c075f3e63a5a37ea2547e38cb99d89e14dd49533b225b77897949489fe85aa09",
+  "glb_bytes": 286108,
+  "blend": "source\\blender\\weapons\\longsword_xva_v006.blend",
+  "renders": [
+    "previews\\v0.4.0\\longsword_xva_v006_side.png",
+    "previews\\v0.4.0\\longsword_xva_v006_edge.png",
+    "previews\\v0.4.0\\longsword_xva_v006_hilt.png",
+    "previews\\v0.4.0\\longsword_xva_v006_three_quarter.png"
+  ],
+  "dimensions_m": {
+    "blade": 0.92,
+    "grip": 0.235,
+    "cross_span": 0.244,
+    "overall": 1.2295
+  },
+  "blender": "5.3.0"
+}
