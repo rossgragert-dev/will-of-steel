@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Will of Steel — v0.4 Asset Test</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#edece6;background:#101719;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0}header{padding:18px clamp(14px,3vw,34px);border-bottom:1px solid #465053;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+h1{font:700 clamp(23px,3vw,35px) Georgia,serif;margin:5px 0}.kicker{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:#cbb184}
+a{color:#dcc492;text-decoration:none}a:hover{text-decoration:underline}header nav{display:flex;gap:17px;font-size:13px}
+main{max-width:1400px;margin:auto;padding:15px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(285px,.8fr);gap:15px}
+.panel{background:#20292b;border:1px solid #435258;border-radius:12px;overflow:hidden}.stage{position:relative;min-height:600px;background:radial-gradient(ellipse at center,#455253,#161e20)}
+#viewport{position:absolute;inset:0}canvas{display:block;touch-action:none}.status{position:absolute;left:15px;top:15px;pointer-events:none;background:#101719dc;padding:11px;border:1px solid #465558;border-radius:8px;max-width:85%;font-size:12px}.status strong{display:block;font-size:16px;margin-bottom:5px}
+.help{position:absolute;bottom:15px;left:15px;right:15px;text-align:center;pointer-events:none;font-size:12px;text-shadow:0 2px 3px #000}
+aside{display:flex;flex-direction:column;gap:15px}.body{padding:17px}.body h2{font:700 21px Georgia,serif;margin:0 0 14px}
+label{font-size:13px;font-weight:700}select{display:block;width:100%;padding:10px;margin:7px 0 13px;background:#0d1517;color:#fff;border:1px solid #778182;border-radius:6px;font-size:14px}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}button{padding:11px 6px;min-height:43px;border-radius:6px;border:1px solid #657270;background:#354345;color:#f2f0e9;cursor:pointer;font-weight:600}button[aria-pressed=true]{background:#6b5a3d;border-color:#d8ba81}
+p{font-size:13px;line-height:1.55;color:#c2cdcd}#details{min-height:4em}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;text-align:center;margin:10px 0}
+.stats div{background:#152024;border:1px solid #3e5157;padding:9px 5px;border-radius:6px}.stats strong{display:block;font-size:17px}.stats small{color:#c0c7c6}
+.photo{background:#13191a;min-height:170px;display:grid;place-items:center}#shot{display:block;max-width:100%;max-height:390px;object-fit:contain}
+.note{font-size:12px;color:#bdc5c2}footer{max-width:1400px;margin:auto;padding:0 15px 20px;color:#aebcb9;font-size:12px;line-height:1.5}
+@media(max-width:900px){main{grid-template-columns:1fr}.stage{min-height:520px}aside{display:grid;grid-template-columns:1fr 1fr}}
+@media(max-width:570px){main{padding:9px}aside{display:flex}.stage{min-height:440px}header nav{gap:9px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body>
+<header><div><div class="kicker">Will of Steel • isolated QA environment</div><h1>v0.4 — Asset Test Lab</h1></div><nav><a href="../../">Play stable v0.3</a><a href="https://github.com/rossgragert-dev/will-of-steel/tree/development/v040-forged-in-reality">Source branch</a></nav></header>
+<main><section class="panel stage" aria-label="3D asset viewer"><div id="viewport"></div><div class="status"><strong id="title">Ser Aldren</strong><span id="status" role="status">Loading the viewer…</span></div><div class="help">Drag: rotate · Scroll/pinch: zoom · Right drag: pan</div></section>
+<aside><section class="panel body"><h2>Inspect real 3D exports</h2>
+<label for="model">Choose a model</label><select id="model"><option value="knight">Ser Aldren • knight v006</option><option value="arms">William • first-person arms v004</option><option value="sword">Type XVa • longsword v006</option></select>
+<div class="buttons"><button id="reset">Reframe</button><button id="spin" aria-pressed="false">Auto-rotate: Off</button><button id="bones" aria-pressed="false">Skeleton: Off</button><button id="grid" aria-pressed="true">Grid: On</button></div>
+<div class="stats"><div><strong id="tri">—</strong><small>Triangles</small></div><div><strong id="boneCount">—</strong><small>Bones</small></div><div><strong id="clips">—</strong><small>Clips</small></div></div>
+<p id="details"></p><p class="note">Rotate each model and inspect proportions, armor joints, materials and grip points. These are static candidates and have not been connected to combat.</p></section>
+<section class="panel body"><h2>Blender render comparisons</h2><label for="images">Choose a pose or camera angle</label><select id="images"></select><div class="photo"><img id="shot" alt="Blender-rendered asset preview"></div>
+<div class="buttons" style="margin-top:10px"><button id="prev">Previous</button><button id="next">Next</button></div><p id="caption"></p>
+<p class="note">These are actual rendered stills. No new fencing animation clips have been authored yet; the parry positions can be compared visually using these frames.</p></section></aside></main>
+<footer>Not a playable v0.4 release. All 3 GLB files and 16 render images are copied without modification from Claude's development branch; the existing gameplay and controls have not been altered. Browser rendering, actual sword physics and physical iPhone performance require separate validation.</footer>
+<script type="module" src="viewer.js?v=1"></script></body></html>
