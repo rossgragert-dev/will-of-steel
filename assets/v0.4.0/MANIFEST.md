@@ -12,9 +12,23 @@ Conventions: metres. In Blender, Z is up and characters face -Y; exports are glT
 | ser_aldren_v006 | build_ser_aldren.py | 20k–40k tris, 1K–2K tex | 35,064 tris, 13 draw calls, 8.1 MB (uncompressed PNG textures) | 45 bones (34 deform), twist bones, IK + poles, weapon_r / grip_l sockets, hinge limits | Candidate; known issues listed in `docs/asset-pipeline/PHASE_B_REVIEW.md` | f7f067d0214c8ac884c359708f341116e14860070bec4f3496f0bae173be4a31 |
 | william_fp_arms_v004 | build_william_arms.py | 8k–15k tris | 9,636 tris, 3 draw calls, 5.0 MB | 51 bones (43 deform), articulated fingers ×3 phalanges, twist, IK, sockets, fp_eye | Candidate; readability-first guard poses in `first-person/william_fp_guards_v004.json` | 6b525af71bfcd99cf84cda260a033a5bd9cde9081a2e4e0a0891913f5435de91 |
 
+### Phase C/D additions (2026-11-20). Visual foundation approved; motion awaiting review. Details in `docs/asset-pipeline/PHASE_CD_REPORT.md`.
+
+| Asset | Script | Measured | Notes | SHA-256 |
+|---|---|---|---|---|
+| ser_aldren_v008 | build_ser_aldren.py | 35,064 tris, 13 draw calls, 8.15 MB | Same skeleton as v006. Rig corrections: pauldrons ride with the arm, no armpit tearing (v007), gauntlet cuffs stay on the wrist (v008). **Current knight.** | 6351fda141f05e98e924b1202b8c1bd6193e2776e34b1037298889eea50dd19d |
+| ser_aldren_v008_mobile_webp | export_mobile.py | 2.68 MB | WebP q85 textures, identical geometry and skeleton. Candidate; visual A/B pending. | cd5be4f890f55dab89d9b508aa6dde6bd8e737418b79e979a9280db419d2b6db |
+| william_fp_arms_v004_mobile_webp | export_mobile.py | 0.97 MB | WebP q85 textures. Candidate; visual A/B pending. | 1aa984f56aef0c1498c5c3378d67ccf6e9e79e913e612c71bd3230db6f437cfd |
+| william_fp_guards_v005.json | fp_parry_search.py | head parry hides 0.0% of opponent (v004: 26.9%) | Redesigned roof parry, valid parry geometry. Other guards as in v004. | — |
+| aldren_clips_v009 | build_animations.py | 232 KB, 6 clips | idle, attack_head, attack_upper_left, attack_upper_right, parry_head, deflect_head. Original keyframes, not motion capture. | 4cb93d8addacf07fd06f7721c3f61ccf22b6b90306953e9de01c6889b98c317b |
+| william_clips_v005 | build_animations.py | 208 KB, 6 clips | First-person counterparts. | dc757c3d774f97e90452fed13eb14304633532965e7a42db44a7331a4802c901 |
+| clips_index_v003.json | build-clip-index.mjs | 12 clips | Phases, contact frames, per-frame samples, QA, engagement distances | — |
+
 Weapon attachment: the sword root goes at the `weapon_r` bone with its `hand_primary` marker at the bone head. Bone +Y = blade direction, bone +Z = true edge. Sword local axes are glTF +Y blade and +X true edge. The off hand targets `hand_secondary` through `grip_l` + IK.
 
 ## Superseded iterations (kept, not for use)
 - longsword v001–v005: v001–v003 had preview-lighting problems. v001–v005 all have all-zero roughness maps (a colour-space bug, fixed in v006).
 - ser_aldren v001 (failed build, textures only) and v002–v005: normal-map sawtooth (v002–v003), zero roughness maps (v002–v004), and cloth poking through plates (v005).
 - william_fp_arms v001: arms outside the portrait frame, and the enemy preview faced away. v002: low guards and head guard hid the opponent. v003: the occlusion scoring was invalid (a raster bug).
+- ser_aldren v007: superseded by v008 (gauntlet cuffs).
+- Clip sets aldren_clips v001–v008, william_clips v001–v004 and clips_index v001–v002: superseded during tuning. v001–v007 / v001–v003 also have GLB keyframe times at 24 fps. All are kept locally and not published.

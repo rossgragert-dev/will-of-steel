@@ -152,6 +152,7 @@ def render_still(scene, cam, rel, res=(1080, 1080)):
     scene.camera = cam
     scene.render.resolution_x, scene.render.resolution_y = res
     scene.render.image_settings.file_format = "PNG"
+    scene.render.use_stamp_filename = False   # never embed the local .blend path in published PNG metadata
     scene.render.filepath = p
     bpy.ops.render.render(write_still=True)
     return p

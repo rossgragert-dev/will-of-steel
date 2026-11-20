@@ -35,3 +35,26 @@ assets/v0.4.0/first-person/william_fp_arms_v00[1-3]*
 assets/v0.4.0/first-person/william_fp_guards_v00[1-3]*
 assets/v0.4.0/textures/william_fp_arms_v00[1-3]/
 previews/v0.4.0/william_fp_arms_v00[1-3]_*
+
+# Phase C/D superseded iterations (kept locally, not published)
+assets/v0.4.0/characters/ser_aldren_v007*
+assets/v0.4.0/textures/ser_aldren_v007/
+previews/v0.4.0/ser_aldren_v007_*
+assets/v0.4.0/animations/aldren_clips_v00[1-8].*
+assets/v0.4.0/animations/william_clips_v00[1-4].*
+assets/v0.4.0/animations/clips_index_v00[1-2].json
+previews/v0.4.0/animation/aldren_v006/
+previews/v0.4.0/animation/william_v004/
+previews/v0.4.0/animation/william_v004_r2/
+# rendered frame sequences (the MP4s and stills are published instead)
+previews/v0.4.0/animation/*/frames/
+# lab captures made before the 30 fps GLB fix (and the agent's early debug captures)
+previews/v0.4.0/lab-screenshots/*_20261120-13*.png
+previews/v0.4.0/lab-screenshots/*_20261120-141*.png
+previews/v0.4.0/lab-screenshots/*_20261120-142*.png
+
+# Render originals whose PNG metadata contains the local .blend path; metadata-free copies are published in
+# previews/v0.4.0-public/ (tools/validation/publish-sanitized.mjs)
+previews/v0.4.0/animation/
+previews/v0.4.0/rig_audit/
+previews/v0.4.0/william_fp_arms_v005_*

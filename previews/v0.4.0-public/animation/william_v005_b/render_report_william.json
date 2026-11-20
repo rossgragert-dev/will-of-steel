@@ -1,0 +1,54 @@
+{
+  "char": "william",
+  "anim_version": "v005",
+  "engine": "CYCLES",
+  "stills": {
+    "william_idle_ready": [
+      "previews/v0.4.0/animation/william_v005_b/stills/william_idle_ready_pov_00_ready.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_idle_ready_pov_45_breath_in.png"
+    ],
+    "william_attack_upper_left": [
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_left_pov_11_windup.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_left_pov_21_acceleration.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_left_pov_24_contact.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_left_pov_29_follow_through.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_left_pov_40_recovery.png"
+    ],
+    "william_attack_upper_right": [
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_right_pov_11_windup.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_right_pov_21_acceleration.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_right_pov_24_contact.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_right_pov_29_follow_through.png",
+      "previews/v0.4.0/animation/william_v005_b/stills/william_attack_upper_right_pov_40_recovery.png"
+    ]
+  },
+  "videos": {
+    "william_idle_ready": {
+      "frames": "previews/v0.4.0/animation/william_v005_b/frames/william_idle_ready_pov",
+      "100pct": [
+        "previews/v0.4.0/animation/william_v005_b/video/william_idle_ready_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/william_v005_b/video/william_idle_ready_25pct.mp4"
+      ]
+    },
+    "william_attack_upper_left": {
+      "frames": "previews/v0.4.0/animation/william_v005_b/frames/william_attack_upper_left_pov",
+      "100pct": [
+        "previews/v0.4.0/animation/william_v005_b/video/william_attack_upper_left_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/william_v005_b/video/william_attack_upper_left_25pct.mp4"
+      ]
+    },
+    "william_attack_upper_right": {
+      "frames": "previews/v0.4.0/animation/william_v005_b/frames/william_attack_upper_right_pov",
+      "100pct": [
+        "previews/v0.4.0/animation/william_v005_b/video/william_attack_upper_right_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/william_v005_b/video/william_attack_upper_right_25pct.mp4"
+      ]
+    }
+  }
+}

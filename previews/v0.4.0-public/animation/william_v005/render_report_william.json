@@ -1,0 +1,55 @@
+{
+  "char": "william",
+  "anim_version": "v005",
+  "engine": "CYCLES",
+  "stills": {
+    "william_attack_head": [
+      "previews/v0.4.0/animation/william_v005/stills/william_attack_head_pov_11_windup.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_attack_head_pov_21_acceleration.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_attack_head_pov_24_contact.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_attack_head_pov_29_follow_through.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_attack_head_pov_40_recovery.png"
+    ],
+    "william_parry_head": [
+      "previews/v0.4.0/animation/william_v005/stills/william_parry_head_pov_00_ready.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_parry_head_pov_03_raise.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_parry_head_pov_08_hold.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_parry_head_pov_23_recover.png"
+    ],
+    "william_deflect_head": [
+      "previews/v0.4.0/animation/william_v005/stills/william_deflect_head_pov_01_impact.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_deflect_head_pov_04_absorb.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_deflect_head_pov_12_settle.png",
+      "previews/v0.4.0/animation/william_v005/stills/william_deflect_head_pov_20_end.png"
+    ]
+  },
+  "videos": {
+    "william_attack_head": {
+      "frames": "previews/v0.4.0/animation/william_v005/frames/william_attack_head_pov",
+      "100pct": [
+        "previews/v0.4.0/animation/william_v005/video/william_attack_head_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/william_v005/video/william_attack_head_25pct.mp4"
+      ]
+    },
+    "william_parry_head": {
+      "frames": "previews/v0.4.0/animation/william_v005/frames/william_parry_head_pov",
+      "100pct": [
+        "previews/v0.4.0/animation/william_v005/video/william_parry_head_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/william_v005/video/william_parry_head_25pct.mp4"
+      ]
+    },
+    "william_deflect_head": {
+      "frames": "previews/v0.4.0/animation/william_v005/frames/william_deflect_head_pov",
+      "100pct": [
+        "previews/v0.4.0/animation/william_v005/video/william_deflect_head_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/william_v005/video/william_deflect_head_25pct.mp4"
+      ]
+    }
+  }
+}

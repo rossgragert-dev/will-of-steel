@@ -1,0 +1,80 @@
+{
+  "asset": "ser_aldren_v008",
+  "blender": "5.3.0",
+  "engine": "CYCLES",
+  "triangles": 35064,
+  "slots": {
+    "aldren_body": {
+      "tris": 4032,
+      "materials": [
+        "aldren_doublet",
+        "aldren_hose",
+        "aldren_leather",
+        "aldren_cap",
+        "aldren_mail"
+      ]
+    },
+    "aldren_torso": {
+      "tris": 7408,
+      "materials": [
+        "aldren_steel",
+        "aldren_leather"
+      ]
+    },
+    "aldren_helmet": {
+      "tris": 4680,
+      "materials": [
+        "aldren_steel",
+        "aldren_cap"
+      ]
+    },
+    "aldren_arms": {
+      "tris": 10592,
+      "materials": [
+        "aldren_steel",
+        "aldren_leather"
+      ]
+    },
+    "aldren_legs": {
+      "tris": 8352,
+      "materials": [
+        "aldren_steel",
+        "aldren_leather"
+      ]
+    }
+  },
+  "draw_calls_est": 13,
+  "normals_fixed": {
+    "aldren_body": "0/1918",
+    "aldren_torso": "0/3704",
+    "aldren_helmet": "0/2340",
+    "aldren_arms": "0/5268",
+    "aldren_legs": "0/4148"
+  },
+  "bones": 45,
+  "deform_bones": 34,
+  "ik_pole_angles_deg": {
+    "forearm_r": -90,
+    "forearm_l": -90,
+    "calf_l": 90,
+    "calf_r": 90
+  },
+  "ik_errors": {
+    "wrist_l_mm": 0.04,
+    "ankle_l_mm": 0.01,
+    "wrist_r_mm": 0.04,
+    "ankle_r_mm": 0.01,
+    "left_hand_on_grip_mm": 0.04
+  },
+  "glb": "assets\\v0.4.0\\characters\\ser_aldren_v008.glb",
+  "glb_sha256": "6351fda141f05e98e924b1202b8c1bd6193e2776e34b1037298889eea50dd19d",
+  "glb_bytes": 8150888,
+  "blend": "source\\blender\\characters\\ser_aldren_v008.blend",
+  "renders": [
+    "previews\\v0.4.0\\ser_aldren_v008_guard_front34.png",
+    "previews\\v0.4.0\\ser_aldren_v008_guard_side.png",
+    "previews\\v0.4.0\\ser_aldren_v008_guard_back34.png",
+    "previews\\v0.4.0\\ser_aldren_v008_guard_detail_upper.png",
+    "previews\\v0.4.0\\ser_aldren_v008_player_pov_portrait.png"
+  ]
+}

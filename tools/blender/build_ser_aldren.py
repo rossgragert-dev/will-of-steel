@@ -103,6 +103,9 @@ TWIST = {"upperarm_l": ("upperarm_twist_l", 0.5, 0.0), "forearm_l": ("forearm_tw
          "upperarm_r": ("upperarm_twist_r", 0.5, 0.0), "forearm_r": ("forearm_twist_r", 0.35, 0.9)}
 AUTO = H.auto_weights(SEGS, twist=TWIST)
 AUTO_NOFINGER = H.auto_weights({k: v for k, v in SEGS.items() if not k.startswith(("fingers", "thumb"))}, twist=TWIST)
+# v007: the torso underlayer must not follow the arms (it tore out at the armpit in overhead poses)
+AUTO_TORSO = H.auto_weights({k: v for k, v in SEGS.items() if k in ("pelvis", "spine_01", "spine_02", "spine_03", "neck",
+                                                                      "clavicle_l", "clavicle_r", "thigh_l", "thigh_r")})
 
 
 def along(a, b, s): return V(a) + (V(b) - V(a)) * s
@@ -114,7 +117,7 @@ def build_body(mats):
     zs = [0.86, 0.92, 0.98, 1.05, 1.13, 1.21, 1.29, 1.36, 1.42, 1.47, 1.51]
     rr = [(0.15, 0.10), (0.165, 0.11), (0.165, 0.11), (0.15, 0.105), (0.15, 0.11), (0.165, 0.12), (0.175, 0.125),
           (0.175, 0.115), (0.150, 0.095), (0.095, 0.068), (0.058, 0.058)]   # slimmer under gorget/backplate
-    s.tube([(0, 0.01, z) for z in zs], rr, FRONT, 0, AUTO_NOFINGER, n=20, tile=0.25)
+    s.tube([(0, 0.01, z) for z in zs], rr, FRONT, 0, AUTO_TORSO, n=20, tile=0.25)
     s.tube([(0, 0.02, 1.46), (0, 0.02, 1.53), (0, 0.018, 1.60)], [0.058, 0.055, 0.055], FRONT, 0, AUTO_NOFINGER, n=14, tile=0.25)
     hz = [1.555, 1.58, 1.62, 1.67, 1.71, 1.75, 1.78, 1.795]
     hr = [(0.05, 0.06), (0.07, 0.085), (0.078, 0.095), (0.08, 0.098), (0.079, 0.096), (0.07, 0.085), (0.05, 0.06), (0.02, 0.02)]
@@ -249,13 +252,13 @@ def build_arms(mats):
         c = [sh - U_UA * 0.07 + V((0, 0, 0.012)), sh - U_UA * 0.02 + V((0, 0, 0.012)), sh + U_UA * 0.035, sh + U_UA * 0.085]
         r = [(0.036, 0.048), (0.076, 0.082), (0.084, 0.089), (0.080, 0.085)]
         a, f = s.shell(c, arc_profiles(r, -1.95, 1.95, 22, offs=[(0.012, 0), (0.012, 0), (0.008, 0), (0.004, 0)]), FRONT, 0,
-                       rigid("clavicle_l", 0.55, "upperarm_l", 0.45), T, tile=0.4)
+                       rigid("clavicle_l", 0.25, "upperarm_l", 0.75), T, tile=0.4)   # v007: rides with the arm
         vs += a; fs += f
         for k in range(3):
             u0 = 0.075 + k * 0.024
             rr = 0.079 - k * 0.005
             a, f = s.shell([sh + U_UA * u0, sh + U_UA * (u0 + 0.03)], arc_profiles([(rr, rr + 0.004), (rr - 0.002, rr + 0.002)], -1.7, 1.7, 18),
-                           FRONT, 0, rigid("upperarm_l", 1.0) if k else rigid("clavicle_l", 0.3, "upperarm_l", 0.7), T, tile=0.4)
+                           FRONT, 0, rigid("upperarm_l", 1.0) if k else rigid("clavicle_l", 0.1, "upperarm_l", 0.9), T, tile=0.4)
             vs += a; fs += f
         return vs, fs
 
@@ -292,7 +295,9 @@ def build_arms(mats):
     def gauntlet():
         back = lambda i, t: -PALM_N
         cuff = [wr - U_FA * 0.065, wr - U_FA * 0.02, wr + U_FA * 0.02]
-        a, f = s.shell(cuff, ring_profiles([(0.052, 0.050), (0.045, 0.042), (0.044, 0.033)], 20), back, 0, rigid("hand_l", 1.0), T,
+        a, f = s.shell(cuff, ring_profiles([(0.052, 0.050), (0.045, 0.042), (0.044, 0.033)], 20), back, 0,
+                       lambda p: {"hand_l": 0.5 + 0.5 * max(0.0, min(1.0, (V(p) - wr).dot(U_FA) / 0.02 + 0.5)),
+                                  "forearm_twist_l": 0.5 - 0.5 * max(0.0, min(1.0, (V(p) - wr).dot(U_FA) / 0.02 + 0.5))}, T,
                        closed=True, tile=0.3)
         vs, fs = a, f
         hp = [wr + U_FA * 0.015, wr + U_FA * 0.055, J["knuckle"] + U_FA * 0.005]

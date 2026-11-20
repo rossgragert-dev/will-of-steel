@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Will of Steel — v0.4 Animation Lab</title>
+<link rel="stylesheet" href="lab.css?v=1">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head><body>
+<header><div><div class="kicker">Will of Steel • isolated QA environment • not the game</div><h1>v0.4 — Animation Lab</h1></div>
+<nav><a href="../../">Play stable v0.3</a><a href="../v040-assets/">Asset lab</a></nav></header>
+<main>
+<section class="panel stage" aria-label="3D animation viewer">
+  <div id="viewport"></div>
+  <div id="portraitGuide" hidden><div class="frame"><span>9:16 portrait frame</span></div></div>
+  <div class="hud">
+    <strong id="title">Loading…</strong>
+    <span id="status" role="status">Loading three.js…</span>
+    <dl id="readouts">
+      <dt>Phase</dt><dd id="rPhase">—</dd>
+      <dt>Frame</dt><dd id="rFrame">—</dd>
+      <dt>Tip speed</dt><dd id="rSpeed">—</dd>
+      <dt>Grip error</dt><dd id="rGrip">—</dd>
+      <dt>Elbows L/R</dt><dd id="rElbow">—</dd>
+      <dt>Contact</dt><dd id="rContact">—</dd>
+    </dl>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="shadowTag" id="shadowTag" hidden>SHADOW MODE · contact is measured only · combat.js is not involved</div>
+</section>
+<aside class="panel controls">
+  <div class="row">
+    <label for="char">Character</label>
+    <select id="char"><option value="aldren">Ser Aldren (third person)</option><option value="william">William (first-person arms)</option><option value="both">Both, facing each other</option></select>
+  </div>
+  <div class="row" id="distRow"><label for="dist">Distance <output id="distOut">2.30 m</output></label><input id="dist" type="range" min="1.4" max="3.6" step="0.05" value="2.3"></div>
+  <div class="row"><label for="clip">Clip</label><select id="clip"></select></div>
+  <div class="row" id="clip2Row"><label for="clip2">Other character's clip</label><select id="clip2"></select></div>
+  <div class="transport">
+    <button id="play" aria-pressed="false">Play</button><button id="restart">Restart</button><button id="loop" aria-pressed="true">Loop: On</button>
+    <select id="speed" aria-label="Playback speed"><option value="0.25">25%</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1" selected>100%</option></select>
+  </div>
+  <div class="row"><label for="scrub">Frame <output id="frameOut">0</output> · <output id="phaseOut">—</output></label><input id="scrub" type="range" min="0" max="0" step="1" value="0"><div id="ticks" class="ticks"></div></div>
+  <div class="row"><label>Camera</label><div class="seg" id="cams">
+    <button data-cam="orbit">Orbit</button><button data-cam="fp">First person</button><button data-cam="side">Side</button><button data-cam="front">Front</button><button data-cam="combat">Combat</button></div></div>
+  <div class="row"><label>Overlays</label><div class="toggles" id="overlays">
+    <button data-ov="skeleton">Skeleton</button><button data-ov="joints">Joints</button><button data-ov="mesh">Armor/mesh</button><button data-ov="path">Blade path</button>
+    <button data-ov="sockets">Sockets</button><button data-ov="contact">Contact</button><button data-ov="hitbox">Hitboxes</button><button data-ov="root">Root trace</button>
+    <button data-ov="feet">Feet</button><button data-ov="v03">v0.3 compare</button></div></div>
+  <details open><summary>Measurements</summary><pre id="metrics">—</pre></details>
+  <details><summary>Shadow contact telemetry</summary><pre id="telemetry">—</pre></details>
+  <p class="note">Blade path: <b class="c-gold">gold</b> = contract samples from clips_index, <b class="c-cyan">cyan</b> = measured in this browser from the attached sword. v0.3 comparison (<b class="c-orange">orange</b>) is approximate: the old procedural grip path from motion.js sampleClip, mapped from its authoring frame (enemy +Z forward, arms group at 1.40 m; William camera space −Z forward) into the character's glTF space.</p>
+  <p class="note">URL automation: <code>?char=aldren&amp;clip=aldren_attack_head&amp;frame=24&amp;cam=side&amp;overlays=path,contact,skeleton&amp;paused=1</code> · <code>&amp;dist=2.3</code> · <code>&amp;clip2=…</code> · <code>&amp;ui=stage</code> · <code>&amp;perf=1</code></p>
+</aside>
+</main>
+<pre id="perfOut" hidden></pre>
+<script type="module" src="lab.js?v=1"></script>
+</body></html>

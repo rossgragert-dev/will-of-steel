@@ -1,0 +1,30 @@
+{
+  "char": "aldren",
+  "anim_version": "v009",
+  "engine": "CYCLES",
+  "stills": {
+    "aldren_attack_head": [
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_front34_11_windup.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_side_11_windup.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_front34_21_acceleration.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_side_21_acceleration.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_front34_24_contact.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_side_24_contact.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_front34_29_follow_through.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_side_29_follow_through.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_front34_40_recovery.png",
+      "previews/v0.4.0/animation/aldren_v009/stills/aldren_attack_head_side_40_recovery.png"
+    ]
+  },
+  "videos": {
+    "aldren_attack_head": {
+      "frames": "previews/v0.4.0/animation/aldren_v009/frames/aldren_attack_head_front34",
+      "100pct": [
+        "previews/v0.4.0/animation/aldren_v009/video/aldren_attack_head_100pct.mp4"
+      ],
+      "25pct": [
+        "previews/v0.4.0/animation/aldren_v009/video/aldren_attack_head_25pct.mp4"
+      ]
+    }
+  }
+}

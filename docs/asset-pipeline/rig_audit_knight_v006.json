@@ -1,0 +1,455 @@
+{
+  "blend": "source/blender/characters/ser_aldren_v006.blend",
+  "armature": "ser_aldren_v006_rig",
+  "bones": 45,
+  "deform_bones": [
+    "pelvis",
+    "spine_01",
+    "spine_02",
+    "spine_03",
+    "neck",
+    "head",
+    "clavicle_l",
+    "upperarm_l",
+    "upperarm_twist_l",
+    "forearm_l",
+    "forearm_twist_l",
+    "hand_l",
+    "fingers_01_l",
+    "fingers_02_l",
+    "thumb_01_l",
+    "thumb_02_l",
+    "clavicle_r",
+    "upperarm_r",
+    "upperarm_twist_r",
+    "forearm_r",
+    "forearm_twist_r",
+    "hand_r",
+    "fingers_01_r",
+    "fingers_02_r",
+    "thumb_01_r",
+    "thumb_02_r",
+    "thigh_l",
+    "calf_l",
+    "foot_l",
+    "toe_l",
+    "thigh_r",
+    "calf_r",
+    "foot_r",
+    "toe_r"
+  ],
+  "non_deform_bones": [
+    "root",
+    "grip_l",
+    "weapon_r",
+    "ik_hand_l",
+    "ik_hand_r",
+    "pole_elbow_l",
+    "pole_elbow_r",
+    "ik_foot_l",
+    "ik_foot_r",
+    "pole_knee_l",
+    "pole_knee_r"
+  ],
+  "hierarchy": {
+    "root": null,
+    "pelvis": "root",
+    "spine_01": "pelvis",
+    "spine_02": "spine_01",
+    "spine_03": "spine_02",
+    "neck": "spine_03",
+    "head": "neck",
+    "clavicle_l": "spine_03",
+    "upperarm_l": "clavicle_l",
+    "upperarm_twist_l": "upperarm_l",
+    "forearm_l": "upperarm_l",
+    "forearm_twist_l": "forearm_l",
+    "hand_l": "forearm_l",
+    "fingers_01_l": "hand_l",
+    "fingers_02_l": "fingers_01_l",
+    "thumb_01_l": "hand_l",
+    "thumb_02_l": "thumb_01_l",
+    "grip_l": "hand_l",
+    "clavicle_r": "spine_03",
+    "upperarm_r": "clavicle_r",
+    "upperarm_twist_r": "upperarm_r",
+    "forearm_r": "upperarm_r",
+    "forearm_twist_r": "forearm_r",
+    "hand_r": "forearm_r",
+    "fingers_01_r": "hand_r",
+    "fingers_02_r": "fingers_01_r",
+    "thumb_01_r": "hand_r",
+    "thumb_02_r": "thumb_01_r",
+    "weapon_r": "hand_r",
+    "thigh_l": "pelvis",
+    "calf_l": "thigh_l",
+    "foot_l": "calf_l",
+    "toe_l": "foot_l",
+    "thigh_r": "pelvis",
+    "calf_r": "thigh_r",
+    "foot_r": "calf_r",
+    "toe_r": "foot_r",
+    "ik_hand_l": "root",
+    "ik_hand_r": "root",
+    "pole_elbow_l": "root",
+    "pole_elbow_r": "root",
+    "ik_foot_l": "root",
+    "ik_foot_r": "root",
+    "pole_knee_l": "root",
+    "pole_knee_r": "root"
+  },
+  "constraints": {
+    "forearm_l": [
+      "IK->ik_hand_l pole=pole_elbow_l -90deg chain=2"
+    ],
+    "hand_l": [
+      "COPY_ROTATION->ik_hand_l"
+    ],
+    "forearm_r": [
+      "IK->ik_hand_r pole=pole_elbow_r -90deg chain=2"
+    ],
+    "hand_r": [
+      "COPY_ROTATION->ik_hand_r"
+    ],
+    "calf_l": [
+      "IK->ik_foot_l pole=pole_knee_l 90deg chain=2"
+    ],
+    "foot_l": [
+      "COPY_ROTATION->ik_foot_l"
+    ],
+    "calf_r": [
+      "IK->ik_foot_r pole=pole_knee_r 90deg chain=2"
+    ],
+    "foot_r": [
+      "COPY_ROTATION->ik_foot_r"
+    ]
+  },
+  "joint_limits": {
+    "forearm_l": "x:0:150",
+    "forearm_r": "x:0:150",
+    "calf_l": "x:-150:0",
+    "calf_r": "x:-150:0"
+  },
+  "rolls_deg": {
+    "upperarm_l": {
+      "y_axis": [
+        0.622,
+        0.02,
+        -0.783
+      ],
+      "z_axis": [
+        0.012,
+        -1.0,
+        -0.016
+      ]
+    },
+    "upperarm_twist_l": {
+      "y_axis": [
+        0.622,
+        0.02,
+        -0.783
+      ],
+      "z_axis": [
+        0.012,
+        -1.0,
+        -0.016
+      ]
+    },
+    "forearm_l": {
+      "y_axis": [
+        0.6,
+        -0.12,
+        -0.791
+      ],
+      "z_axis": [
+        -0.073,
+        -0.993,
+        0.096
+      ]
+    },
+    "forearm_twist_l": {
+      "y_axis": [
+        0.6,
+        -0.12,
+        -0.791
+      ],
+      "z_axis": [
+        -0.073,
+        -0.993,
+        0.096
+      ]
+    },
+    "hand_l": {
+      "y_axis": [
+        0.6,
+        -0.12,
+        -0.791
+      ],
+      "z_axis": [
+        -0.8,
+        -0.09,
+        -0.594
+      ]
+    },
+    "grip_l": {
+      "y_axis": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "z_axis": [
+        0.605,
+        0.0,
+        -0.796
+      ]
+    },
+    "upperarm_r": {
+      "y_axis": [
+        -0.622,
+        0.02,
+        -0.783
+      ],
+      "z_axis": [
+        -0.012,
+        -1.0,
+        -0.016
+      ]
+    },
+    "upperarm_twist_r": {
+      "y_axis": [
+        -0.622,
+        0.02,
+        -0.783
+      ],
+      "z_axis": [
+        -0.012,
+        -1.0,
+        -0.016
+      ]
+    },
+    "forearm_r": {
+      "y_axis": [
+        -0.6,
+        -0.12,
+        -0.791
+      ],
+      "z_axis": [
+        0.073,
+        -0.993,
+        0.096
+      ]
+    },
+    "forearm_twist_r": {
+      "y_axis": [
+        -0.6,
+        -0.12,
+        -0.791
+      ],
+      "z_axis": [
+        0.073,
+        -0.993,
+        0.096
+      ]
+    },
+    "hand_r": {
+      "y_axis": [
+        -0.6,
+        -0.12,
+        -0.791
+      ],
+      "z_axis": [
+        0.8,
+        -0.09,
+        -0.594
+      ]
+    },
+    "weapon_r": {
+      "y_axis": [
+        0.0,
+        -1.0,
+        -0.0
+      ],
+      "z_axis": [
+        -0.605,
+        0.0,
+        -0.796
+      ]
+    },
+    "thigh_l": {
+      "y_axis": [
+        0.019,
+        -0.028,
+        -0.999
+      ],
+      "z_axis": [
+        -0.001,
+        -1.0,
+        0.028
+      ]
+    },
+    "calf_l": {
+      "y_axis": [
+        0.009,
+        0.088,
+        -0.996
+      ],
+      "z_axis": [
+        0.001,
+        -0.996,
+        -0.088
+      ]
+    },
+    "thigh_r": {
+      "y_axis": [
+        -0.019,
+        -0.028,
+        -0.999
+      ],
+      "z_axis": [
+        0.001,
+        -1.0,
+        0.028
+      ]
+    },
+    "calf_r": {
+      "y_axis": [
+        -0.009,
+        0.088,
+        -0.996
+      ],
+      "z_axis": [
+        -0.001,
+        -0.996,
+        -0.088
+      ]
+    }
+  },
+  "weights": {
+    "aldren_arms": {
+      "verts": 5344,
+      "max_influences": 2,
+      "verts_over_4_influences": 0,
+      "unweighted": 0,
+      "sum_not_1": 0
+    },
+    "aldren_body": {
+      "verts": 2118,
+      "max_influences": 4,
+      "verts_over_4_influences": 0,
+      "unweighted": 0,
+      "sum_not_1": 0
+    },
+    "aldren_helmet": {
+      "verts": 2372,
+      "max_influences": 2,
+      "verts_over_4_influences": 0,
+      "unweighted": 0,
+      "sum_not_1": 0
+    },
+    "aldren_legs": {
+      "verts": 4208,
+      "max_influences": 2,
+      "verts_over_4_influences": 0,
+      "unweighted": 0,
+      "sum_not_1": 0
+    },
+    "aldren_torso": {
+      "verts": 3727,
+      "max_influences": 2,
+      "verts_over_4_influences": 0,
+      "unweighted": 0,
+      "sum_not_1": 0
+    }
+  },
+  "sockets": {
+    "weapon_r": {
+      "head": [
+        -0.5504,
+        -0.0102,
+        0.9236
+      ],
+      "y_blade": [
+        0.0,
+        -1.0,
+        -0.0
+      ],
+      "z_true_edge": [
+        -0.605,
+        0.0,
+        -0.796
+      ],
+      "parent": "hand_r"
+    },
+    "grip_l": {
+      "head": [
+        0.5504,
+        -0.0102,
+        0.9236
+      ],
+      "y_blade": [
+        -0.0,
+        -1.0,
+        -0.0
+      ],
+      "z_true_edge": [
+        0.605,
+        0.0,
+        -0.796
+      ],
+      "parent": "hand_l"
+    },
+    "fp_eye": null
+  },
+  "rom_poses": {
+    "vom_tag_high": {
+      "wrist_err_l_mm": 0.0,
+      "elbow_l_deg": 106.8,
+      "wrist_twist_l_deg": -85.0,
+      "shoulder_elev_l_deg": 46.5,
+      "wrist_err_r_mm": 0.0,
+      "elbow_r_deg": 102.3,
+      "wrist_twist_r_deg": -98.3,
+      "shoulder_elev_r_deg": 52.7
+    },
+    "overhead_parry": {
+      "wrist_err_l_mm": 51.1,
+      "elbow_l_deg": 8.1,
+      "wrist_twist_l_deg": -24.8,
+      "shoulder_elev_l_deg": 24.6,
+      "wrist_err_r_mm": 0.0,
+      "elbow_r_deg": 94.9,
+      "wrist_twist_r_deg": -127.7,
+      "shoulder_elev_r_deg": 33.4
+    },
+    "diag_windup_right": {
+      "wrist_err_l_mm": 0.0,
+      "elbow_l_deg": 107.2,
+      "wrist_twist_l_deg": -148.4,
+      "shoulder_elev_l_deg": -18.3,
+      "wrist_err_r_mm": 0.1,
+      "elbow_r_deg": 134.3,
+      "wrist_twist_r_deg": -146.5,
+      "shoulder_elev_r_deg": -1.1
+    },
+    "diag_followthrough_left": {
+      "wrist_err_l_mm": 0.0,
+      "elbow_l_deg": 82.0,
+      "wrist_twist_l_deg": 117.4,
+      "shoulder_elev_l_deg": -71.4,
+      "wrist_err_r_mm": 112.2,
+      "elbow_r_deg": 8.1,
+      "wrist_twist_r_deg": -50.4,
+      "shoulder_elev_r_deg": -46.4
+    },
+    "low_guard_lunge": {
+      "wrist_err_l_mm": 0.0,
+      "elbow_l_deg": 74.9,
+      "wrist_twist_l_deg": 80.7,
+      "shoulder_elev_l_deg": -76.1,
+      "wrist_err_r_mm": 0.0,
+      "elbow_r_deg": 27.2,
+      "wrist_twist_r_deg": -64.8,
+      "shoulder_elev_r_deg": -48.8
+    }
+  }
+}
